@@ -21,10 +21,9 @@
 		</header>
 
 		<div class="wrapper">
-			<div class="left">
 				<!-- Dropdown Menu -->
 				<select class="selectText" name="generateText" id="pet-select">
-					<option value="" selected disabled>--Choose text to generate--</option>
+					<option value="" selected disabled>-Choose text to generate-</option>
 					<option value="uselessFact">Useless Fact</option>
 					<option value="rickAndMorty">Rick and Morty</option>
 					<option value="gameOfThrones">Game of Thrones (API not working rn??)</option>
@@ -35,22 +34,12 @@
 					<option value="breakingBad">Breaking Bad (API not working rn??)</option>
 				</select>
 
-				<!-- Display generated text -->
-				<div class="generatedTextDisplay">
-					<input type="submit" value="Determine sentiment of this text" class="useTextRunAPI"/>
-					<p class="generatedText"></p>
-					<span class="moreInfoOne"></span>
-					<span class="moreInfoTwo"></span>
-				</div>
-			</div>
-
-			<div class="right">
-				<!-- Signup Form -->
-				<!-- <form id="signup-form" method="post" action="#"> -->
 					<textarea id="text" name="" rows="5" cols="33">Input text for analysis here</textarea>
+					<div class="displayMoreInfo">
+						<span class="moreInfoOne"></span>
+						<span class="moreInfoTwo"></span>
+					</div>
 					<input type="submit" value="Determine sentiment" class="runAPI"/>
-				<!-- </form> -->
-			</div>
 		</div>
 
 		<div class="displayResults">

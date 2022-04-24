@@ -1,7 +1,7 @@
 // to run sentiment analysis when user clicks button
 document.querySelector('.runAPI').addEventListener('click', getFetch)
-// to run function to transfer generated text to textarea
-document.querySelector('.useTextRunAPI').addEventListener('click', transferText)
+// // to run function to transfer generated text to textarea
+// document.querySelector('.useTextRunAPI').addEventListener('click', transferText)
 
 // when user chooses text to generate, fetch from the respective API
 const selectText = document.querySelector('.selectText');
@@ -78,7 +78,7 @@ function uselessFact(){
         generatedTextDisplay = data.text
         displayMoreOne = ''
         displayMoreTwo = ''
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
         document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
@@ -98,7 +98,7 @@ function rickAndMorty(){
         generatedTextDisplay = data.data
         displayMoreOne = ''
         displayMoreTwo = ''
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
         document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
@@ -119,7 +119,7 @@ function gameOfThrones(){
         generatedTextDisplay = data.sentence
         displayMoreOne = ''
         displayMoreTwo = ''
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
         document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
@@ -140,7 +140,7 @@ function ronSwanson(){
         generatedTextDisplay = data
         displayMoreOne = ''
         displayMoreTwo = ''
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
         document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
@@ -163,7 +163,7 @@ function movieAndSeries(){
         generatedTextDisplay = data.quote
         displayMoreOne = data.role
         displayMoreTwo = data.show
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne} `
         document.querySelector('.moreInfoTwo').innerText = `from ${displayMoreTwo}`
       })
@@ -187,7 +187,7 @@ function strangerThings(){
         generatedTextDisplay = data[0].quote
         displayMoreOne = data[0].author
         displayMoreTwo = ''
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
         document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
@@ -211,10 +211,10 @@ function owenWilsonWow(){
         console.log(data[0].total_wows_in_movie)
         generatedTextDisplay = data[0].full_line
         displayMoreOne = data[0].movie
-        displayMoreTwo = data[0].total_wows_in_movie
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        displayMoreTwo = ''
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `Movie: ${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `Total "wows" in movie: ${displayMoreTwo}`
+        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -235,7 +235,7 @@ function breakingBad(){
         generatedTextDisplay = data[0].quote
         displayMoreOne = data[0].author
         displayMoreTwo = ''
-        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
         document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })

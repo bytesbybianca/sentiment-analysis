@@ -444,7 +444,7 @@ ul.icons {
       color: inherit; }
 
 /* Form */
-form {
+/* form {
   margin: 0 0 2em 0; }
   form .message {
     text-decoration: none;
@@ -479,7 +479,7 @@ form {
       transform: scale(1);
       opacity: 1; }
     form .message.success {
-      color: #1cb495; }
+      color: rgba(255, 255, 255, 0.02); }
       form .message.success:before {
         content: '\f00c'; }
     form .message.failure {
@@ -492,7 +492,7 @@ label {
   display: block;
   font-size: 0.9em;
   font-weight: 700;
-  margin: 0 0 1em 0; }
+  margin: 0 0 1em 0; } */
 
 @-moz-keyframes focus {
   0% {
@@ -579,10 +579,10 @@ textarea {
   -webkit-transition: border-color 0.2s ease, background-color 0.2s ease;
   -ms-transition: border-color 0.2s ease, background-color 0.2s ease;
   transition: border-color 0.2s ease, background-color 0.2s ease;
-  background-color: transparent;
-  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.02);
+  /* border-radius: 6px; */
   border: none;
-  border: solid 2px rgba(255, 255, 255, 0.35);
+  /* border: solid 2px rgba(255, 255, 255, 0.35); */
   color: inherit;
   display: block;
   outline: 0;
@@ -604,8 +604,8 @@ textarea {
     -webkit-animation: focus 0.1s;
     -ms-animation: focus 0.1s;
     animation: focus 0.1s;
-    background-color: rgba(255, 255, 255, 0.125);
-    border-color: #1cb495; }
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.02); }
 
 select {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.35)' /%3E%3C/svg%3E");
@@ -684,14 +684,14 @@ input[type="radio"] {
       width: 1.65em; }
   input[type="checkbox"]:checked + label:before,
   input[type="radio"]:checked + label:before {
-    background: #1cb495;
-    border-color: #1cb495;
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.02);
     color: #ffffff;
     content: '\f00c'; }
   input[type="checkbox"]:focus + label:before,
   input[type="radio"]:focus + label:before {
-    border-color: #1cb495;
-    box-shadow: 0 0 0 2px #1cb495; }
+    border-color: rgba(255, 255, 255, 0.02);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.02); }
 
 input[type="checkbox"] + label:before {
   border-radius: 6px; }
@@ -733,8 +733,8 @@ button,
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  background-color: #1cb495;
-  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.02);
+  /* border-radius: 6px; */
   border: 0;
   color: #ffffff !important;
   cursor: pointer;
@@ -752,13 +752,13 @@ button,
   input[type="button"]:hover,
   button:hover,
   .button:hover {
-    background-color: #1fcaa7; }
+    background-color: rgba(255, 255, 255, 0.05); }
   input[type="submit"]:active,
   input[type="reset"]:active,
   input[type="button"]:active,
   button:active,
   .button:active {
-    background-color: #199e83; }
+    background-color: rgba(255, 255, 255, 0.09); }
   input[type="submit"].disabled, input[type="submit"]:disabled,
   input[type="reset"].disabled,
   input[type="reset"]:disabled,
@@ -802,38 +802,20 @@ button,
 /* Wrapper */
 .wrapper {
   margin: 2rem auto;
-  width: 80vw;
-  display: flex;
-  gap: 10%;
+  width: 60vw;
   justify-content: center;
-  flex-wrap: no-wrap;
 }
-/* Dropdown Menu */
-.left, .right {
-  width: 50%;
-}
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 736px) {
   .wrapper {
-    flex-wrap: wrap;
-  }
-  .left, .right {
-    width: 100%;
-  }
+    width: 90vw;
 }
 
-/* Display generated text */
-.generatedTextDisplay {
-  display: flex;
-  flex-wrap: wrap;
+.wrapper select {
+  margin-bottom: 5px;
 }
 
-.generatedTextDisplay * {
-  display: block;
-}
-
-.generatedText {
-  /* height: 90px; */
+.displayMoreInfo {
+  height: 3rem;
 }
 
 /* Display Results */
