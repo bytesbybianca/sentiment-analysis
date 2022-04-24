@@ -1,7 +1,7 @@
 // to run sentiment analysis when user clicks button
 document.querySelector('.runAPI').addEventListener('click', getFetch)
 // to run function to transfer generated text to textarea
-document.querySelector('button').addEventListener('click', transferText)
+document.querySelector('.useTextRunAPI').addEventListener('click', transferText)
 
 // when user chooses text to generate, fetch from the respective API
 const selectText = document.querySelector('.selectText');
@@ -22,9 +22,18 @@ selectText.addEventListener('change', choice => {
 let generatedTextDisplay = ''
 let displayMoreOne = ''
 let displayMoreTwo = ''
+
+// For display results animation
+// Scramble letters // https://codepen.io/stphnnnn/pen/PmEdVw
+// Spark text // https://speckyboy.com/text-distortion-effects/
+// Typing // https://codepen.io/FelixLuciano/pen/PoqdMKP
+// Typing from Google // https://codepen.io/sheikh_ishaan/pen/LYEOqjd
+// Blink text // https://codepen.io/alphardex/pen/BayEGXB
+
 // to transfer generated text to textarea
 function transferText() {
   document.querySelector('#text').innerText = document.querySelector('.generatedText').innerText
+  getFetch()
 }
 
 // https://sentim-api.herokuapp.com/

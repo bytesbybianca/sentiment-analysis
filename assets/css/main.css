@@ -240,13 +240,13 @@ body, input, select, textarea {
       font-size: 12pt; } }
   @media screen and (max-width: 1280px) {
     body, input, select, textarea {
-      font-size: 11pt; } }
+      font-size: 16pt; } }
   @media screen and (max-width: 980px) {
     body, input, select, textarea {
-      font-size: 12pt; } }
+      font-size: 14pt; } }
   @media screen and (max-width: 736px) {
     body, input, select, textarea {
-      font-size: 12pt; } }
+      font-size: 14pt; } }
   @media screen and (max-width: 480px) {
     body, input, select, textarea {
       font-size: 12pt; } }
@@ -739,7 +739,7 @@ button,
   color: #ffffff !important;
   cursor: pointer;
   display: inline-block;
-  font-weight: 700;
+  font-weight: 500;
   height: 2.75em;
   width: 100%;
   line-height: 2.75em;
@@ -801,7 +801,7 @@ button,
 
 /* Wrapper */
 .wrapper {
-  margin: 0 auto;
+  margin: 2rem auto;
   width: 80vw;
   display: flex;
   gap: 10%;
@@ -813,10 +813,23 @@ button,
   width: 50%;
 }
 
+@media screen and (max-width: 480px) {
+  .wrapper {
+    flex-wrap: wrap;
+  }
+  .left, .right {
+    width: 100%;
+  }
+}
+
 /* Display generated text */
 .generatedTextDisplay {
   display: flex;
   flex-wrap: wrap;
+}
+
+.generatedTextDisplay * {
+  display: block;
 }
 
 .generatedText {
@@ -832,6 +845,7 @@ button,
 
 .displayResults * {
   font-size: 3rem;
+  padding: 2rem;
 }
 
 /* Signup Form */
