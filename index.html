@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Eventually by HTML5 UP</title>
+		<title>Sentiment Analysis</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -20,27 +20,36 @@
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, magni?.</p>
 			</header>
 
+		<!-- Dropdown Menu -->
+		<select class="selectText" name="generateText" id="pet-select">
+			<option value="" selected disabled>--Choose text to generate--</option>
+			<option value="uselessFact">Useless Fact</option>
+			<option value="rickAndMorty">Rick and Morty</option>
+			<option value="gameOfThrones">Game of Thrones</option>
+			<option value="ronSwanson">Ron Swanson</option>
+			<option value="movieAndSeries">Movie and Series</option>
+			<option value="strangerThings">Stranger Things</option>
+			<option value="owenWilsonWow">Owen Wilson's "Wow"</option>
+			<option value="breakingBad">Breaking Bad</option>
+		</select>
 		<!-- Signup Form -->
 			<!-- <form id="signup-form" method="post" action="#"> -->
-				<input type="text" name="" placeholder="Type your text here" value=""/>
+				<textarea id="text" name="" rows="5" cols="33">Input text for analysis here</textarea>
 				<input type="submit" value="Determine sentiment" class="runAPI"/>
-				<p class="displaySentiment">
-
-				</p>
+				<p class="displaySentiment"></p>
+				<p class="displayPolarity"></p>
 			<!-- </form> -->
 
 		<!-- Footer -->
-			<!-- <footer id="footer">
+			<footer id="footer">
 				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+					<li><a href="https://twitter.com/bytesbybianca" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/bytesbybianca/" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
 				</ul>
 				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; Bianca Togonon</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
-			</footer> -->
+			</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/app.js"></script>
