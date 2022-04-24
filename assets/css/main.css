@@ -118,10 +118,10 @@ body {
       padding: 6em 3.5em 3.5em 3.5em; } }
   @media screen and (max-width: 736px) {
     body {
-      padding: 5em 2em 2em 2em; } }
+      padding: 6em 2em 2em 2em; } }
   @media screen and (max-width: 360px) {
     body {
-      padding: 5em 1.25em 1.25em 1.25em; } }
+      padding: 2em 1.25em 1.25em 1.25em; } }
 
 /* BG */
 #bg {
@@ -805,9 +805,22 @@ button,
   width: 60vw;
   justify-content: center;
 }
+
+.displayMoreInfo {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.wrapper span {
+  color: rgba(255, 255, 255, 0.5)
+}
+
 @media screen and (max-width: 736px) {
   .wrapper {
+    margin: initial;
     width: 90vw;
+  }
 }
 
 .wrapper select {
@@ -828,6 +841,9 @@ button,
 .displayResults * {
   font-size: 3rem;
   padding: 2rem;
+}
+@media screen and (max-width: 360px) {
+  font-size: 2rem;
 }
 
 /* Signup Form */
@@ -876,7 +892,8 @@ button,
   color: rgba(255, 255, 255, 0.5);
   left: 4em;
   opacity: 0.5;
-  position: absolute; }
+  position: absolute; 
+}
   #footer .icons {
     margin: 0 0 0.5em 0; }
   #footer .copyright {

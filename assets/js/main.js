@@ -164,7 +164,7 @@ function movieAndSeries(){
         displayMoreOne = data.role
         displayMoreTwo = data.show
         document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne} `
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
         document.querySelector('.moreInfoTwo').innerText = `from ${displayMoreTwo}`
       })
       .catch(err => {
