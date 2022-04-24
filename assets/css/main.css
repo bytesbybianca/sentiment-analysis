@@ -833,7 +833,8 @@ button,
 
 /* Display Results */
 .displayResults {
-  height: 200px;
+  height: 5rem;
+  margin: 2rem auto;
   display: flex;
   justify-content: center;
 }
