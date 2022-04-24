@@ -14,31 +14,49 @@
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<h1>Sentiment API</h1>
-				<p>Input text to determine sentiment<br />
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, magni?.</p>
-			</header>
+		<header id="header">
+			<h1>Sentiment API</h1>
+			<p>Input text to determine sentiment<br />
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, magni?.</p>
+		</header>
 
-		<!-- Dropdown Menu -->
-		<select class="selectText" name="generateText" id="pet-select">
-			<option value="" selected disabled>--Choose text to generate--</option>
-			<option value="uselessFact">Useless Fact</option>
-			<option value="rickAndMorty">Rick and Morty</option>
-			<option value="gameOfThrones">Game of Thrones</option>
-			<option value="ronSwanson">Ron Swanson</option>
-			<option value="movieAndSeries">Movie and Series</option>
-			<option value="strangerThings">Stranger Things</option>
-			<option value="owenWilsonWow">Owen Wilson's "Wow"</option>
-			<option value="breakingBad">Breaking Bad</option>
-		</select>
-		<!-- Signup Form -->
-			<!-- <form id="signup-form" method="post" action="#"> -->
-				<textarea id="text" name="" rows="5" cols="33">Input text for analysis here</textarea>
-				<input type="submit" value="Determine sentiment" class="runAPI"/>
-				<p class="displaySentiment"></p>
-				<p class="displayPolarity"></p>
-			<!-- </form> -->
+		<div class="wrapper">
+			<div class="left">
+				<!-- Dropdown Menu -->
+				<select class="selectText" name="generateText" id="pet-select">
+					<option value="" selected disabled>--Choose text to generate--</option>
+					<option value="uselessFact">Useless Fact</option>
+					<option value="rickAndMorty">Rick and Morty</option>
+					<option value="gameOfThrones">Game of Thrones (API not working rn??)</option>
+					<option value="ronSwanson">Ron Swanson</option>
+					<option value="movieAndSeries">Movie and Series</option>
+					<option value="strangerThings">Stranger Things</option>
+					<option value="owenWilsonWow">Owen Wilson's "Wow"</option>
+					<option value="breakingBad">Breaking Bad (API not working rn??)</option>
+				</select>
+
+				<!-- Display generated text -->
+				<div class="generatedTextDisplay">
+					<button>Use text</button>
+					<p class="generatedText"></p>
+					<span class="moreInfoOne"></span>
+					<span class="moreInfoTwo"></span>
+				</div>
+			</div>
+
+			<div class="right">
+				<!-- Signup Form -->
+				<!-- <form id="signup-form" method="post" action="#"> -->
+					<textarea id="text" name="" rows="5" cols="33">Input text for analysis here</textarea>
+					<input type="submit" value="Determine sentiment" class="runAPI"/>
+				<!-- </form> -->
+			</div>
+		</div>
+
+		<div class="displayResults">
+			<p class="displaySentiment"></p>
+			<p class="displayPolarity"></p>
+		</div>
 
 		<!-- Footer -->
 			<footer id="footer">

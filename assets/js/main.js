@@ -1,4 +1,9 @@
+// to run sentiment analysis when user clicks button
 document.querySelector('.runAPI').addEventListener('click', getFetch)
+// to run function to transfer generated text to textarea
+document.querySelector('button').addEventListener('click', transferText)
+
+// when user chooses text to generate, fetch from the respective API
 const selectText = document.querySelector('.selectText');
 
 selectText.addEventListener('change', choice => {
@@ -14,13 +19,22 @@ selectText.addEventListener('change', choice => {
   functionName === 'breakingBad' ? breakingBad() : null
 })
 
+let generatedTextDisplay = ''
+let displayMoreOne = ''
+let displayMoreTwo = ''
+// to transfer generated text to textarea
+function transferText() {
+  document.querySelector('#text').innerText = document.querySelector('.generatedText').innerText
+}
+
 // https://sentim-api.herokuapp.com/
+// run sentiment analysis
 function getFetch(){
   let sentence = document.querySelector('#text').value
 //   const sentence = 'I am so happy'
   const url = 'https://sentim-api.herokuapp.com/api/v1/'
 
-  // how to use headers and body: https://stackoverflow.com/questions/29775797/fetch-post-json-data
+// how to use headers and body: https://stackoverflow.com/questions/29775797/fetch-post-json-data
   fetch(url, {
     method: 'POST',
     headers: {
@@ -44,32 +58,40 @@ function getFetch(){
 
 // getFetch()
 
-// Useless Facts text
-document.querySelector('.generateUselessFact').addEventListener('click', uselessFact)
-// https://uselessfacts.jsph.pl/
+// Useless Facts text // https://uselessfacts.jsph.pl/
 function uselessFact(){
   const url = 'https://uselessfacts.jsph.pl/random.json?language=en'
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
+        console.log(data)
         console.log(data.text)
-        document.querySelector('#text').innerText = data.text
+        generatedTextDisplay = data.text
+        displayMoreOne = ''
+        displayMoreTwo = ''
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
+        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
 
-// Rick and Morty quotes
-document.querySelector('.generateRickAndMorty').addEventListener('click', rickAndMorty)
-// http://loremricksum.com/documentation/
+// Rick and Morty quotes // http://loremricksum.com/documentation/
 function rickAndMorty(){
   const url = 'http://loremricksum.com/api/'
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
+        console.log(data)
         console.log(data.data)
-        document.querySelector('#text').innerText = data.data
+        generatedTextDisplay = data.data
+        displayMoreOne = ''
+        displayMoreTwo = ''
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
+        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -85,7 +107,12 @@ function gameOfThrones(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        document.querySelector('#text').innerText = data.sentence
+        generatedTextDisplay = data.sentence
+        displayMoreOne = ''
+        displayMoreTwo = ''
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
+        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -101,7 +128,12 @@ function ronSwanson(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        document.querySelector('#text').innerText = data
+        generatedTextDisplay = data
+        displayMoreOne = ''
+        displayMoreTwo = ''
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
+        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -119,7 +151,12 @@ function movieAndSeries(){
         console.log(data)
         console.log(data.quote)
         console.log(data.show)
-        document.querySelector('#text').innerText = data.quote
+        generatedTextDisplay = data.quote
+        displayMoreOne = data.role
+        displayMoreTwo = data.show
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne} `
+        document.querySelector('.moreInfoTwo').innerText = `from ${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -138,7 +175,12 @@ function strangerThings(){
         console.log(data)
         console.log(data[0].quote)
         console.log(data[0].author)
-        document.querySelector('#text').innerText = data[0].quote
+        generatedTextDisplay = data[0].quote
+        displayMoreOne = data[0].author
+        displayMoreTwo = ''
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
+        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -158,7 +200,12 @@ function owenWilsonWow(){
         console.log(data[0].full_line)
         console.log(data[0].movie)
         console.log(data[0].total_wows_in_movie)
-        document.querySelector('#text').innerText = data[0].full_line
+        generatedTextDisplay = data[0].full_line
+        displayMoreOne = data[0].movie
+        displayMoreTwo = data[0].total_wows_in_movie
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `Movie: ${displayMoreOne}`
+        document.querySelector('.moreInfoTwo').innerText = `Total "wows" in movie: ${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -176,7 +223,12 @@ function breakingBad(){
         console.log(data)
         console.log(data[0].quote)
         console.log(data[0].author)
-        document.querySelector('#text').innerText = data[0].quote
+        generatedTextDisplay = data[0].quote
+        displayMoreOne = data[0].author
+        displayMoreTwo = ''
+        document.querySelector('.generatedText').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
+        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
