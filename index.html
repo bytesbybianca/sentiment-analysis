@@ -22,7 +22,7 @@
 
 		<div class="wrapper">
 				<!-- Dropdown Menu -->
-				<select class="selectText" name="generateText" id="pet-select">
+				<select class="selectText" id="textSelector">
 					<option value="" selected disabled>-Choose text to generate-</option>
 					<option value="uselessFact">Useless Fact</option>
 					<option value="rickAndMorty">Rick and Morty</option>
@@ -46,9 +46,13 @@
 			<p class="displaySentiment"></p>
 			<p class="displayPolarity"></p>
 		</div>
+		<div class="slidecontainer">
+			<input type="range" min="-1" max ="1" value="" step=".01" class="slider" id="slideRange" disabled>
+		</div>
+
 
 		<!-- Footer -->
-			<footer>
+			<!-- <footer>
 				<ul class="icons">
 					<li><a href="https://twitter.com/bytesbybianca" class="icon brands fa-twitter" target="_blank" rel="noopener noreferrer"><span class="label">Twitter</span></a></li>
 					<li><a href="https://github.com/bytesbybianca/" class="icon brands fa-github" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span></a></li>
@@ -56,7 +60,7 @@
 				<ul class="copyright">
 					<li>&copy; Bianca Togonon</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
-			</footer>
+			</footer> -->
 
 		<!-- Scripts -->
 			<script src="assets/js/app.js"></script>

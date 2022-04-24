@@ -25,7 +25,7 @@ let displayMoreTwo = ''
 
 // For display results animation
 // Scramble letters // https://codepen.io/stphnnnn/pen/PmEdVw
-// Spark text // https://speckyboy.com/text-distortion-effects/
+// Spark text // https://codepen.io/42EG4M1/pen/QjoYgG
 // Typing // https://codepen.io/FelixLuciano/pen/PoqdMKP
 // Typing from Google // https://codepen.io/sheikh_ishaan/pen/LYEOqjd
 // Blink text // https://codepen.io/alphardex/pen/BayEGXB
@@ -59,6 +59,11 @@ function getFetch(){
         console.log(data.result.polarity)
         document.querySelector('.displaySentiment').innerText = `${data.result.type}`
         document.querySelector('.displayPolarity').innerText = `${data.result.polarity}`
+
+        // https://www.w3schools.com/howto/howto_js_rangeslider.asp
+        // update for smoother transition
+        document.querySelector('#slideRange').value = data.result.polarity
+        document.querySelector('#slideRange').style.transition = "all 2s"
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -243,3 +248,4 @@ function breakingBad(){
           console.log(`error ${err}`)
       });
 }
+
