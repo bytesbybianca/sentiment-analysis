@@ -46,7 +46,7 @@ const url = 'https://the-one-api.dev/v2/quote'
 fetch(url, {
     method: 'GET',
     headers: {
-    'Authorization': 'Bearer xmEHQL2e_sqb8Z2iEDIh'
+    'Authorization': `Bearer ${lotr_api_key}`
     }
 })
     .then(res => res.json()) // parse response as JSON
@@ -68,7 +68,7 @@ const url = `https://the-one-api.dev/v2/character/${characterID}`
 fetch(url, {
     method: 'GET',
     headers: {
-    'Authorization': 'Bearer xmEHQL2e_sqb8Z2iEDIh'
+    'Authorization': `Bearer ${lotr_api_key}`
     }
 })
     .then(res => res.json()) // parse response as JSON
@@ -87,7 +87,7 @@ const url = `https://the-one-api.dev/v2/movie/${movieID}`
 fetch(url, {
     method: 'GET',
     headers: {
-    'Authorization': 'Bearer xmEHQL2e_sqb8Z2iEDIh'
+    'Authorization': `Bearer ${lotr_api_key}`
     }
 })
     .then(res => res.json()) // parse response as JSON
