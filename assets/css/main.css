@@ -272,7 +272,7 @@ em, i {
   font-style: italic; }
 
 p {
-  margin: 0 0 2em 0; }
+  margin: 2rem 0; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
@@ -832,8 +832,8 @@ button,
 
 /* Display Results */
 .displayResults {
-  height: 10rem;
-  margin: 2rem auto;
+  /* height: 10rem; */
+  /* margin: 2rem auto; */
   display: flex;
   justify-content: center;
 }
