@@ -100,7 +100,7 @@ body {
   -ms-justify-content: center;
   justify-content: center;
   background-color: #000;
-  padding: 6em 4em 4em 4em; }
+  padding: 2em 4em 4em 4em; }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -115,10 +115,10 @@ body {
     z-index: 2; }
   @media screen and (max-width: 1680px) {
     body {
-      padding: 6em 3.5em 3.5em 3.5em; } }
+      padding: 2em 3.5em 3.5em 3.5em; } }
   @media screen and (max-width: 736px) {
     body {
-      padding: 6em 2em 2em 2em; } }
+      padding: 2em 2em 2em 2em; } }
   @media screen and (max-width: 360px) {
     body {
       padding: 2em 1.25em 1.25em 1.25em; } }
