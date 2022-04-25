@@ -870,6 +870,16 @@ button,
   transition: opacity .2s;
 }
 
+.slider:enabled {
+  transition: all 2s;
+}
+
+@media screen and (max-width: 800px) {
+  .slider {
+    width: 100%;
+  }
+}
+
 /* Mouse-over effects */
 .slider:hover {
   opacity: 1; /* Fully shown on mouse-over */

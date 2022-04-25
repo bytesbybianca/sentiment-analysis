@@ -9,14 +9,17 @@ const selectText = document.querySelector('.selectText');
 selectText.addEventListener('change', choice => {
   console.log(choice.target.value)
   let functionName = choice.target.value
-  functionName === 'uselessFact' ? uselessFact() :
-  functionName === 'rickAndMorty' ? rickAndMorty() : 
-  functionName === 'gameOfThrones' ? gameOfThrones() : 
-  functionName === 'ronSwanson' ? ronSwanson() : 
+  functionName === 'anime' ? anime() :
+  functionName === 'kanye' ? kanye() : 
+  functionName === 'lotr' ? lotrGetQuote() : 
+  functionName === 'mcu' ? mcu() : 
   functionName === 'movieAndSeries' ? movieAndSeries() : 
-  functionName === 'strangerThings' ? strangerThings() : 
   functionName === 'owenWilsonWow' ? owenWilsonWow() : 
-  functionName === 'breakingBad' ? breakingBad() : null
+  functionName === 'rickAndMorty' ? rickAndMorty() : 
+  functionName === 'ronSwanson' ? ronSwanson() : 
+  functionName === 'strangerThings' ? strangerThings() : 
+  functionName === 'taylor' ? taylor() : 
+  functionName === 'uselessFact' ? uselessFact() : null
 })
 
 let generatedTextDisplay = ''
@@ -70,22 +73,189 @@ function getFetch(){
       });
 }
 
-// getFetch()
+// // // Text generator follows
 
-// Useless Facts text // https://uselessfacts.jsph.pl/
-function uselessFact(){
-  const url = 'https://uselessfacts.jsph.pl/random.json?language=en'
+// Anime Quotes
+// https://animechan.vercel.app/
+function anime(){
+  const url = 'https://animechan.vercel.app/api/random'
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        console.log(data.text)
-        generatedTextDisplay = data.text
-        displayMoreOne = ''
-        displayMoreTwo = ''
+        console.log(data.anime)
+        console.log(data.character)
+        generatedTextDisplay = data.quote
+        displayMoreOne = data.character
+        displayMoreTwo = data.anime
         document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne} from ${displayMoreTwo}`
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+// Kanye quotes
+// https://kanye.rest/
+function kanye(){
+  const url = 'https://api.kanye.rest'
+  fetch(url)
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        console.log(data)
+        generatedTextDisplay = data.quote
+        displayMoreOne = 'Kanye West'
+        document.querySelector('#text').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+// Lord of the Rings
+// https://kanye.rest/
+
+// get LOTR quote
+function lotrGetQuote(){
+  const url = 'https://the-one-api.dev/v2/quote'
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer xmEHQL2e_sqb8Z2iEDIh'
+    }
+  })
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        let randomNum = Math.floor(Math.random()*1000)
+        let randomLOTR = data.docs[randomNum]
+        console.log(randomNum)
+        lotrQuote = randomLOTR.dialog
+        // passing character and movie id info to function to get character name
+        lotrGetName(randomLOTR.character, randomLOTR.movie, lotrQuote)
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+// get LOTR character name from id
+function lotrGetName(characterID, movie, quote){
+  const url = `https://the-one-api.dev/v2/character/${characterID}`
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer xmEHQL2e_sqb8Z2iEDIh'
+    }
+  })
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        lotrChar = data.docs[0].name
+        // passing character name and movie id info to function to get movie name
+        lotrGetMovie(movie, lotrChar, quote)
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+// get LOTR movie name from id
+function lotrGetMovie(movieID, name, quote){
+  const url = `https://the-one-api.dev/v2/movie/${movieID}`
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer xmEHQL2e_sqb8Z2iEDIh'
+    }
+  })
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        // console.log(data)
+        lotrMovie = data.docs[0].name
+        lotr(quote, name, lotrMovie)
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+// display LOTR info on DOM
+function lotr(quote, char, movie) {
+  console.log(quote)
+  console.log(char)
+  console.log(movie)
+  generatedTextDisplay = quote
+  displayMoreOne = char
+  displayMoreTwo = movie
+  document.querySelector('#text').innerText = generatedTextDisplay
+  document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne} from ${displayMoreTwo}`
+}
+
+
+
+// MCU
+// https://rapidapi.com/kyledeguzmanx/api/marvel-quote-api/
+function mcu(){
+  const url = 'https://marvel-quote-api.p.rapidapi.com/'
+  fetch(url, {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Host': 'marvel-quote-api.p.rapidapi.com',
+      'X-RapidAPI-Key': '930bd807f9msh37bdf32b3a45577p145336jsnd78191d93136'
+    }
+  })
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        console.log(data)
+        console.log(data.Quote)
+        console.log(data.show)
+        generatedTextDisplay = data.Quote
+        displayMoreOne = data.Speaker
+        displayMoreTwo = data.Title
+        document.querySelector('#text').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne} from ${displayMoreTwo}`
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+// Movie and Series quotes
+// https://github.com/F4R4N/movie-quote/
+function movieAndSeries(){
+  const url = 'https://movie-quote-api.herokuapp.com/v1/quote/'
+  fetch(url)
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        console.log(data)
+        console.log(data.quote)
+        console.log(data.show)
+        generatedTextDisplay = data.quote
+        displayMoreOne = data.role
+        displayMoreTwo = data.show
+        document.querySelector('#text').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne} from ${displayMoreTwo}`
+      })
+      .catch(err => {
+          console.log(`error ${err}`)
+      });
+}
+
+// Owen Wilson "WoW"
+// https://owen-wilson-wow-api.herokuapp.com/
+function owenWilsonWow(){
+  const url = 'https://owen-wilson-wow-api.herokuapp.com/wows/random'
+  fetch(url)
+      .then(res => res.json()) // parse response as JSON
+      .then(data => {
+        console.log(data)
+        console.log(data[0].full_line)
+        console.log(data[0].movie)
+        console.log(data[0].total_wows_in_movie)
+        generatedTextDisplay = data[0].full_line
+        displayMoreOne = data[0].movie
+        document.querySelector('#text').innerText = generatedTextDisplay
+        document.querySelector('.moreInfoOne').innerText = `Movie: ${displayMoreOne}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -102,31 +272,8 @@ function rickAndMorty(){
         console.log(data.data)
         generatedTextDisplay = data.data
         displayMoreOne = ''
-        displayMoreTwo = ''
         document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
-      })
-      .catch(err => {
-          console.log(`error ${err}`)
-      });
-}
-
-// Game of Thrones quotes
-document.querySelector('.generateGameOfThrones').addEventListener('click', gameOfThrones)
-// https://github.com/shevabam/game-of-thrones-quotes-api
-function gameOfThrones(){
-  const url = 'https://game-of-thrones-quotes.herokuapp.com/v1/random'
-  fetch(url)
-      .then(res => res.json()) // parse response as JSON
-      .then(data => {
-        console.log(data)
-        generatedTextDisplay = data.sentence
-        displayMoreOne = ''
-        displayMoreTwo = ''
-        document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
@@ -143,43 +290,16 @@ function ronSwanson(){
       .then(data => {
         console.log(data)
         generatedTextDisplay = data
-        displayMoreOne = ''
-        displayMoreTwo = ''
-        document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
-      })
-      .catch(err => {
-          console.log(`error ${err}`)
-      });
-}
-
-// Movie and Series quotes
-document.querySelector('.generateMovieSeries').addEventListener('click', movieAndSeries)
-// https://github.com/F4R4N/movie-quote/
-function movieAndSeries(){
-  const url = 'https://movie-quote-api.herokuapp.com/v1/quote/'
-  fetch(url)
-      .then(res => res.json()) // parse response as JSON
-      .then(data => {
-        console.log(data)
-        console.log(data.quote)
-        console.log(data.show)
-        generatedTextDisplay = data.quote
-        displayMoreOne = data.role
-        displayMoreTwo = data.show
+        displayMoreOne = 'Ron Swanson'
         document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `from ${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
 
-
 // Stranger Things quotes
-document.querySelector('.generateStrangerThings').addEventListener('click', strangerThings)
 // https://github.com/shadowoff09/strangerthings-quotes
 function strangerThings(){
   const url = 'https://strangerthings-quotes.vercel.app/api/quotes'
@@ -191,61 +311,49 @@ function strangerThings(){
         console.log(data[0].author)
         generatedTextDisplay = data[0].quote
         displayMoreOne = data[0].author
-        displayMoreTwo = ''
         document.querySelector('#text').innerText = generatedTextDisplay
         document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
 
-
-// Owen Wilson "WoW"
-document.querySelector('.generateOwenWilsonWow').addEventListener('click', owenWilsonWow)
-// https://owen-wilson-wow-api.herokuapp.com/
-function owenWilsonWow(){
-  const url = 'https://owen-wilson-wow-api.herokuapp.com/wows/random'
+// Taylor Swift lyrics
+// https://github.com/MitanshiKshatriya/taylor-swift-api
+function taylor() {
+  const url = 'https://taylorswiftapi.herokuapp.com/get'
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        console.log(data[0].full_line)
-        console.log(data[0].movie)
-        console.log(data[0].total_wows_in_movie)
-        generatedTextDisplay = data[0].full_line
-        displayMoreOne = data[0].movie
-        displayMoreTwo = ''
+        console.log(data.quote)
+        generatedTextDisplay = data.quote
+        displayMoreOne = 'Taylor Swift'
+        displayMoreTwo = data.song
+        let displayMoreThree = data.album
         document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `Movie: ${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}. "${displayMoreTwo}" from album ${displayMoreThree}`
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
 
-// Breaking Bad
-document.querySelector('.generateBreakingBad').addEventListener('click', breakingBad)
-// https://github.com/shevabam/breaking-bad-quotes
-function breakingBad(){
-  const url = 'https://breaking-bad-quotes.herokuapp.com/v1/quotes'
+// Useless Facts text // https://uselessfacts.jsph.pl/
+function uselessFact(){
+  const url = 'https://uselessfacts.jsph.pl/random.json?language=en'
   fetch(url)
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
-        console.log(data[0].quote)
-        console.log(data[0].author)
-        generatedTextDisplay = data[0].quote
-        displayMoreOne = data[0].author
-        displayMoreTwo = ''
+        console.log(data.text)
+        generatedTextDisplay = data.text
+        displayMoreOne = ''
         document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}`
-        document.querySelector('.moreInfoTwo').innerText = `${displayMoreTwo}`
+        document.querySelector('.moreInfoOne').innerText = `${displayMoreOne}`
       })
       .catch(err => {
           console.log(`error ${err}`)
       });
 }
-
