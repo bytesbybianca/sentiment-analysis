@@ -253,7 +253,7 @@ fetch(url)
         displayMoreTwo = data.song
         let displayMoreThree = data.album
         document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}. "${displayMoreTwo}" from album ${displayMoreThree}`
+        document.querySelector('.moreInfoOne').innerText = `- ${displayMoreOne}. "${displayMoreTwo}" from the album ${displayMoreThree}`
     })
     .catch(err => {
         console.log(`error ${err}`)
