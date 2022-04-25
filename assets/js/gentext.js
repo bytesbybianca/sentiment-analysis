@@ -175,7 +175,7 @@ fetch(url)
         generatedTextDisplay = data[0].full_line
         displayMoreOne = data[0].movie
         document.querySelector('#text').innerText = generatedTextDisplay
-        document.querySelector('.moreInfoOne').innerText = `Movie: ${displayMoreOne}`
+        document.querySelector('.moreInfoOne').innerText = `from ${displayMoreOne}`
     })
     .catch(err => {
         console.log(`error ${err}`)

@@ -949,6 +949,7 @@ footer {
   /* left: 4em; */
   opacity: 0.5;
   /* position: absolute;  */
+  margin-top: 4rem;
 }
   footer .icons {
     margin: 0 0 0.5em 0; }
@@ -972,7 +973,7 @@ footer {
     opacity: 1; }
   footer > :last-child {
     margin-bottom: 0; }
-  @media screen and (max-width: 1680px) {
+  /* @media screen and (max-width: 1680px) {
     footer {
       bottom: 3.5em;
       left: 3.5em; } }
@@ -989,4 +990,4 @@ footer {
       bottom: auto;
       left: auto;
       margin: 1em 0 0 0;
-      position: relative; } }
+      position: relative; } } */
