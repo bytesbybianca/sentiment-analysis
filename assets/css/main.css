@@ -21,7 +21,7 @@ section, summary, time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  }
+  vertical-align: baseline; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -780,7 +780,7 @@ button,
 /* Header */
 #header h1 {
   font-size: 3.25em;
-  margin: 0 0 0.55em 0; }
+  margin: 5rem 0 0.55em 0; }
 
 #header p {
   font-size: 1.35em;
@@ -789,18 +789,23 @@ button,
 #header a {
   color: inherit; }
 
+@media screen and (max-width: 1366px) {
+  #header h1 {
+    margin: 5em 0 1em 0; } }  
+
 @media screen and (max-width: 736px) {
   #header h1 {
-    font-size: 2em; }
+    font-size: 2.2em; }
   #header p {
     font-size: 1em; } }
 
 @media screen and (max-width: 480px) {
-  #header {
-    margin: 0 0 1em 0; } }
+  #header h1 {
+    margin: 5rem 0 1em 0; } }
 
 /* Wrapper */
 .wrapper {
+  display: block;
   margin: 0 auto;
   width: 60vw;
 }
@@ -817,8 +822,7 @@ button,
 
 @media screen and (max-width: 736px) {
   .wrapper {
-    margin: initial;
-    width: 90vw;
+    width: 85vw;
   }
 }
 
@@ -868,10 +872,6 @@ button,
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
   transition: opacity .2s;
-}
-
-.slider:enabled {
-  transition: all 2s;
 }
 
 @media screen and (max-width: 800px) {
@@ -949,7 +949,7 @@ footer {
   /* left: 4em; */
   opacity: 0.5;
   /* position: absolute;  */
-  margin-top: 4rem;
+  margin-bottom: 2rem;
 }
   footer .icons {
     margin: 0 0 0.5em 0; }
