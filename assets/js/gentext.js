@@ -121,7 +121,7 @@ fetch(url, {
     method: 'GET',
     headers: {
     'X-RapidAPI-Host': 'marvel-quote-api.p.rapidapi.com',
-    'X-RapidAPI-Key': '930bd807f9msh37bdf32b3a45577p145336jsnd78191d93136'
+    'X-RapidAPI-Key': `${mcu_api_key}`
     }
 })
     .then(res => res.json()) // parse response as JSON
