@@ -23,7 +23,7 @@
 3. <a href="https://kanye.rest/" target="_blank" rel="noopener noreferrer">kanye.rest</a>
 4. <a href="https://the-one-api.dev/" target="_blank" rel="noopener noreferrer">The One API</a>
 5. <a href="https://rapidapi.com/kyledeguzmanx/api/marvel-quote-api/" target="_blank" rel="noopener noreferrer">Marvel-Quote-API</a>
-6. <a href="https://github.com/F4R4N/movie-quote/" target="_blank" rel="noopener noreferrer">movie-quote></a>
+6. <a href="https://github.com/F4R4N/movie-quote/" target="_blank" rel="noopener noreferrer">movie-quote</a>
 7. <a href="https://owen-wilson-wow-api.herokuapp.com/" target="_blank" rel="noopener noreferrer">Owen Wilson Wow API</a>
 8. <a href="http://loremricksum.com/documentation/" target="_blank" rel="noopener noreferrer">R&M IPSUM API</a>
 9. <a href="https://github.com/jamesseanwright/ron-swanson-quotes" target="_blank" rel="noopener noreferrer">Ron Swanson quotes API</a>
