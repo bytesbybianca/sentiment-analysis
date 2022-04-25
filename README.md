@@ -1,7 +1,7 @@
 # Sentiment Analysis
 
 <p align="center">
-<img src="https://i.imgur.com/lX4rb7i.gif">
+<img src="https://github.com/bytesbybianca/readme-assets/blob/main/project-images/sentiment-analysis-main.gif?raw=true">
 </p>
 
 🎯 Our class was recently introduced to APIs and we've been tasked with building a simple app with an API.
