@@ -66,3 +66,41 @@ function getFetch(){
           console.log(`error ${err}`)
       });
 }
+
+
+// // ALTERNATIVE BUT ONLY DETERMINES BY 100%
+// // https://rapidapi.com/fyhao/api/text-sentiment-analysis-method/
+// function getFetch(){
+//   let sentence = document.querySelector('#text').value
+//   let encodedParams = new URLSearchParams();
+// encodedParams.append("text", `${sentence}`);
+// //   const sentence = 'I am so happy'
+//   const url = 'https://text-sentiment.p.rapidapi.com/analyze'
+
+// // how to use headers and body: https://stackoverflow.com/questions/29775797/fetch-post-json-data
+//   fetch(url, {
+//     method: 'POST',
+//     headers: {
+//       'content-type': 'application/x-www-form-urlencoded',
+//       'X-RapidAPI-Host': 'text-sentiment.p.rapidapi.com',
+//       'X-RapidAPI-Key': '930bd807f9msh37bdf32b3a45577p145336jsnd78191d93136'
+//     },
+//     body: encodedParams
+//   })
+//       .then(res => res.json()) // parse response as JSON
+//       .then(data => {
+//         console.log(data)
+//         // console.log(data.result.type)
+//         // console.log(data.result.polarity)
+//         // document.querySelector('.displaySentiment').innerText = `${data.result.type}`
+//         // document.querySelector('.displayPolarity').innerText = `${data.result.polarity}`
+
+//         // https://www.w3schools.com/howto/howto_js_rangeslider.asp
+//         // update for smoother transition
+//         // document.querySelector('#slideRange').value = data.result.polarity
+//         // document.querySelector('#slideRange').style.transition = "all 2s"
+//       })
+//       .catch(err => {
+//           console.log(`error ${err}`)
+//       });
+// }
