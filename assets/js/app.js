@@ -110,42 +110,42 @@
 					$message;
 
 			// Bail if addEventListener isn't supported.
-				if (!('addEventListener' in $form))
-					return;
+				// if (!('addEventListener' in $form))
+				// 	return;
 
 			// Message.
-				$message = document.createElement('span');
-					$message.classList.add('message');
-					$form.appendChild($message);
+				// $message = document.createElement('span');
+				// 	$message.classList.add('message');
+				// 	$form.appendChild($message);
 
-				$message._show = function(type, text) {
+				// $message._show = function(type, text) {
 
-					$message.innerHTML = text;
-					$message.classList.add(type);
-					$message.classList.add('visible');
+				// 	$message.innerHTML = text;
+				// 	$message.classList.add(type);
+				// 	$message.classList.add('visible');
 
-					window.setTimeout(function() {
-						$message._hide();
-					}, 3000);
+				// 	window.setTimeout(function() {
+				// 		$message._hide();
+				// 	}, 3000);
 
-				};
+				// };
 
-				$message._hide = function() {
-					$message.classList.remove('visible');
-				};
+				// $message._hide = function() {
+				// 	$message.classList.remove('visible');
+				// };
 
 			// Events.
 			// Note: If you're *not* using AJAX, get rid of this event listener.
-				$form.addEventListener('submit', function(event) {
+				// $form.addEventListener('submit', function(event) {
 
-					event.stopPropagation();
-					event.preventDefault();
+				// 	event.stopPropagation();
+				// 	event.preventDefault();
 
-					// Hide message.
-						$message._hide();
+				// 	// Hide message.
+				// 		$message._hide();
 
-					// Disable submit.
-						$submit.disabled = true;
+				// 	// Disable submit.
+				// 		$submit.disabled = true;
 
 					// Process form.
 					// Note: Doesn't actually do anything yet (other than report back with a "thank you"),
@@ -168,4 +168,5 @@
 
 		})();
 
-})();
+// })
+// ();

@@ -7,7 +7,7 @@ document.querySelector('.runAPI').addEventListener('click', getFetch)
 const selectText = document.querySelector('.selectText');
 
 selectText.addEventListener('change', choice => {
-  console.log(choice.target.value)
+  // console.log(choice.target.value)
   let functionName = choice.target.value
   functionName === 'anime' ? anime() :
   functionName === 'kanye' ? kanye() : 
@@ -44,9 +44,9 @@ function getFetch(){
   })
       .then(res => res.json()) // parse response as JSON
       .then(data => {
-        console.log(data)
-        console.log(data.result.type)
-        console.log(data.result.polarity)
+        // console.log(data)
+        // console.log(data.result.type)
+        // console.log(data.result.polarity)
         document.querySelector('.displaySentiment').innerText = `${data.result.type}`
         document.querySelector('.displayPolarity').innerText = `${data.result.polarity}`
 

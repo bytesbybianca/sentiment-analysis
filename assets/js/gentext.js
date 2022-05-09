@@ -5,9 +5,9 @@ function anime(){
     fetch(url)
         .then(res => res.json()) // parse response as JSON
         .then(data => {
-          console.log(data)
-          console.log(data.anime)
-          console.log(data.character)
+        //   console.log(data)
+        //   console.log(data.anime)
+        //   console.log(data.character)
           generatedTextDisplay = data.quote
           displayMoreOne = data.character
           displayMoreTwo = data.anime
@@ -26,7 +26,7 @@ const url = 'https://api.kanye.rest'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
+        // console.log(data)
         generatedTextDisplay = data.quote
         displayMoreOne = 'Kanye West'
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -53,7 +53,7 @@ fetch(url, {
     .then(data => {
         let randomNum = Math.floor(Math.random()*1000)
         let randomLOTR = data.docs[randomNum]
-        console.log(randomNum)
+        // console.log(randomNum)
         lotrQuote = randomLOTR.dialog
         // passing character and movie id info to function to get character name
         lotrGetName(randomLOTR.character, randomLOTR.movie, lotrQuote)
@@ -103,9 +103,9 @@ fetch(url, {
 
 // display LOTR info on DOM
 function lotr(quote, char, movie) {
-console.log(quote)
-console.log(char)
-console.log(movie)
+// console.log(quote)
+// console.log(char)
+// console.log(movie)
 generatedTextDisplay = quote
 displayMoreOne = char
 displayMoreTwo = movie
@@ -126,9 +126,9 @@ fetch(url, {
 })
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
-        console.log(data.Quote)
-        console.log(data.show)
+        // console.log(data)
+        // console.log(data.Quote)
+        // console.log(data.show)
         generatedTextDisplay = data.Quote
         displayMoreOne = data.Speaker
         displayMoreTwo = data.Title
@@ -147,9 +147,9 @@ const url = 'https://movie-quote-api.herokuapp.com/v1/quote/'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
-        console.log(data.quote)
-        console.log(data.show)
+        // console.log(data)
+        // console.log(data.quote)
+        // console.log(data.show)
         generatedTextDisplay = data.quote
         displayMoreOne = data.role
         displayMoreTwo = data.show
@@ -168,10 +168,10 @@ const url = 'https://owen-wilson-wow-api.herokuapp.com/wows/random'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
-        console.log(data[0].full_line)
-        console.log(data[0].movie)
-        console.log(data[0].total_wows_in_movie)
+        // console.log(data)
+        // console.log(data[0].full_line)
+        // console.log(data[0].movie)
+        // console.log(data[0].total_wows_in_movie)
         generatedTextDisplay = data[0].full_line
         displayMoreOne = data[0].movie
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -188,8 +188,8 @@ const url = 'http://loremricksum.com/api/'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
-        console.log(data.data)
+        // console.log(data)
+        // console.log(data.data)
         generatedTextDisplay = data.data
         displayMoreOne = ''
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -201,14 +201,13 @@ fetch(url)
 }
 
 // Ron Swanson quotes
-document.querySelector('.generateRonSwanson').addEventListener('click', ronSwanson)
 // https://github.com/jamesseanwright/ron-swanson-quotes
 function ronSwanson(){
 const url = 'https://ron-swanson-quotes.herokuapp.com/v2/quotes'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
+        // console.log(data)
         generatedTextDisplay = data
         displayMoreOne = 'Ron Swanson'
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -226,9 +225,9 @@ const url = 'https://strangerthings-quotes.vercel.app/api/quotes'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
-        console.log(data[0].quote)
-        console.log(data[0].author)
+        // console.log(data)
+        // console.log(data[0].quote)
+        // console.log(data[0].author)
         generatedTextDisplay = data[0].quote
         displayMoreOne = data[0].author
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -246,8 +245,8 @@ const url = 'https://taylorswiftapi.herokuapp.com/get'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
-        console.log(data.quote)
+        // console.log(data)
+        // console.log(data.quote)
         generatedTextDisplay = data.quote
         displayMoreOne = 'Taylor Swift'
         displayMoreTwo = data.song
@@ -266,8 +265,8 @@ const url = 'https://uselessfacts.jsph.pl/random.json?language=en'
 fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
-        console.log(data)
-        console.log(data.text)
+        // console.log(data)
+        // console.log(data.text)
         generatedTextDisplay = data.text
         displayMoreOne = ''
         document.querySelector('#text').innerText = generatedTextDisplay
