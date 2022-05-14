@@ -6,7 +6,15 @@ document.querySelector('.runAPI').addEventListener('click', getFetch)
 // when user chooses text to generate, fetch from the respective API
 const selectText = document.querySelector('.selectText');
 
+let generatedTextDisplay = ''
+let displayMoreOne = ''
+let displayMoreTwo = ''
+let sentence = ''
+
 selectText.addEventListener('change', choice => {
+  // document.querySelector('#text').value = ''
+  // if(document.querySelector('#text').value == '') {
+  // console.log(document.querySelector('#text').value)
   // console.log(choice.target.value)
   let functionName = choice.target.value
   functionName === 'anime' ? anime() :
@@ -21,15 +29,10 @@ selectText.addEventListener('change', choice => {
   functionName === 'taylor' ? taylor() : 
   functionName === 'uselessFact' ? uselessFact() : null
 })
-
-let generatedTextDisplay = ''
-let displayMoreOne = ''
-let displayMoreTwo = ''
-
 // https://sentim-api.herokuapp.com/
 // run sentiment analysis
 function getFetch(){
-  let sentence = document.querySelector('#text').value
+   sentence = document.querySelector('#text').value
 //   const sentence = 'I am so happy'
   const url = 'https://sentim-api.herokuapp.com/api/v1/'
 
@@ -47,6 +50,7 @@ function getFetch(){
         // console.log(data)
         // console.log(data.result.type)
         // console.log(data.result.polarity)
+        console.log(sentence)
         document.querySelector('.displaySentiment').innerText = `${data.result.type}`
         document.querySelector('.displayPolarity').innerText = `${data.result.polarity}`
 

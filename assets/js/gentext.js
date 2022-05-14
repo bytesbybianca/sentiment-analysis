@@ -8,6 +8,7 @@ function anime(){
         //   console.log(data)
         //   console.log(data.anime)
         //   console.log(data.character)
+          document.querySelector('#text').value = data.quote
           generatedTextDisplay = data.quote
           displayMoreOne = data.character
           displayMoreTwo = data.anime
@@ -27,6 +28,7 @@ fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
         // console.log(data)
+        document.querySelector('#text').value = data.quote
         generatedTextDisplay = data.quote
         displayMoreOne = 'Kanye West'
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -106,6 +108,7 @@ function lotr(quote, char, movie) {
 // console.log(quote)
 // console.log(char)
 // console.log(movie)
+document.querySelector('#text').value = quote
 generatedTextDisplay = quote
 displayMoreOne = char
 displayMoreTwo = movie
@@ -129,6 +132,7 @@ fetch(url, {
         // console.log(data)
         // console.log(data.Quote)
         // console.log(data.show)
+        document.querySelector('#text').value = data.Quote
         generatedTextDisplay = data.Quote
         displayMoreOne = data.Speaker
         displayMoreTwo = data.Title
@@ -150,6 +154,7 @@ fetch(url)
         // console.log(data)
         // console.log(data.quote)
         // console.log(data.show)
+        document.querySelector('#text').value = data.quote
         generatedTextDisplay = data.quote
         displayMoreOne = data.role
         displayMoreTwo = data.show
@@ -172,6 +177,7 @@ fetch(url)
         // console.log(data[0].full_line)
         // console.log(data[0].movie)
         // console.log(data[0].total_wows_in_movie)
+        document.querySelector('#text').value = data[0].full_line
         generatedTextDisplay = data[0].full_line
         displayMoreOne = data[0].movie
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -190,6 +196,7 @@ fetch(url)
     .then(data => {
         // console.log(data)
         // console.log(data.data)
+        document.querySelector('#text').value = data.data
         generatedTextDisplay = data.data
         displayMoreOne = ''
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -208,6 +215,7 @@ fetch(url)
     .then(res => res.json()) // parse response as JSON
     .then(data => {
         // console.log(data)
+        document.querySelector('#text').value = data
         generatedTextDisplay = data
         displayMoreOne = 'Ron Swanson'
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -228,6 +236,7 @@ fetch(url)
         // console.log(data)
         // console.log(data[0].quote)
         // console.log(data[0].author)
+        document.querySelector('#text').value = data[0].quote
         generatedTextDisplay = data[0].quote
         displayMoreOne = data[0].author
         document.querySelector('#text').innerText = generatedTextDisplay
@@ -247,6 +256,7 @@ fetch(url)
     .then(data => {
         // console.log(data)
         // console.log(data.quote)
+        document.querySelector('#text').value = data.quote
         generatedTextDisplay = data.quote
         displayMoreOne = 'Taylor Swift'
         displayMoreTwo = data.song
@@ -267,6 +277,7 @@ fetch(url)
     .then(data => {
         // console.log(data)
         // console.log(data.text)
+        document.querySelector('#text').value = data.text
         generatedTextDisplay = data.text
         displayMoreOne = ''
         document.querySelector('#text').innerText = generatedTextDisplay
