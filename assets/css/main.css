@@ -782,7 +782,7 @@ button,
   font-size: 3.25em;
   margin: 5rem 0 0.55em 0; }
 
-#header p {
+#header p, .instructions {
   font-size: 1.35em;
   line-height: 1.65em; }
 
